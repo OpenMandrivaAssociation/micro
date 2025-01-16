@@ -26,7 +26,7 @@ URL:            https://micro-editor.github.io/
 %if "%{commit_tag}" != "%{nil}"
 Source0:        https://github.com/<org_name>/<project_name>/archive/%{commit_tag}.tar.gz#/%{name}-%{version}.xz
 %else
-Source0:        https://github.com/zyedidia/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/zyedidia/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.bz2
 %endif
 
 BuildRequires: golang-bin
@@ -36,7 +36,7 @@ BuildRequires: make
 %autosetup -p1
 
 %build
-go build ./cmd/micro
+%make_build build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
