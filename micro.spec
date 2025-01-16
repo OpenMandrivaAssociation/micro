@@ -29,6 +29,8 @@ Source0:        https://github.com/<org_name>/<project_name>/archive/%{commit_ta
 Source0:        https://github.com/zyedidia/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 %endif
 
+Patch0:         micro-Makefile.patch
+
 BuildRequires: golang-bin
 BuildRequires: make
 
@@ -36,7 +38,6 @@ BuildRequires: make
 %autosetup -p1
 
 %build
-export EXTRAFLAGS="-mod=vendor"
 export DATE="$(date -u -d @${SOURCE_DATE_EPOCH:-$(date +%s)} --iso-8601)"
 export HASH="%{shortcommit}"
 export VERSION="%{version}"
