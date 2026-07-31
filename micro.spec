@@ -15,7 +15,7 @@
 # the short commit tag should be 7 characters long
 
 Name:           micro
-Version:        2.0.14
+Version:        2.0.15
 Release:	      %{?commit_date:~0.%{commit_date}.}1
 Summary:        A modern and intuitive terminal-based text editor
 Group:          Utilities
